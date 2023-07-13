@@ -4,8 +4,17 @@ let stop_btn = document.getElementById("stop_btn");
 let bars_container = document.getElementById("bars_container");
 let minRange = 1;
 let maxRange = 20;
-let numOfBars = 30;
+let numOfBars = 20;
 let unsorted_array = new Array(numOfBars);
+const slider= document.getElementById('speed-slider');
+
+
+let waitTime=1000;
+slider.addEventListener('input',function(event){
+    waitTime=event.target.value;
+});
+
+
 
 function randomNum(min,max) {
     return Math.floor(Math.random() * (max-min +1)) + min;
@@ -42,10 +51,9 @@ function sleep(ms) {
     return new Promise((resolve) => setTimeout(resolve,ms));
 }
 
-// let bool=false;
-
 async function bubbleSort(array){
-    
+    randomize_array.disabled=true;
+    sort_btn.disabled=true;
     let bars = document.getElementsByClassName("bar");
     let lcolor;
     
@@ -55,7 +63,7 @@ async function bubbleSort(array){
             if(array[j]>array[j+1]){
                 for( let k = 0; k<bars.length; k++){
                     if(k !== j && k !== j+1){
-                        bars[k].style.backgroundColor = 'rgb(190,236,245)';
+                        bars[k].style.backgroundColor = 'green';
                     }
                 }
                 let temp = array[j];
@@ -63,38 +71,28 @@ async function bubbleSort(array){
                 array[j+1] = temp;
 
                 //styling 
-                // bars[j].innerText = array[j];
+                bars[j].innerText = array[j];
                 bars[j+1].style.height = array[j+1] * 18 + "px";
-                bars[j+1].style.backgroundColor = "lightgreen";
-                // bars[j+1].innerText = array[j];
+                bars[j+1].style.backgroundColor = "yellow";
+                bars[j+1].innerText = array[j+1];
                 
                 bars[j].style.height = array[j] * 18 + "px";
-                bars[j].style.backgroundColor = "pink";
-                await sleep(50);
+                bars[j].style.backgroundColor = "red";
+                await sleep(waitTime);
             }
             
         }
-        await sleep(50);
+        await sleep(waitTime);
     }
+    randomize_array.disabled=false;
+    sort_btn.disabled=false;
     return array;
 }
-
-// function stop_function(bool){
-//     return false;
-// }
-
-// function stop_function() {
-//     clearInterval(timeValue);
-//  }
-                
 
 sort_btn.addEventListener("click", function() {
     let sorted_array = bubbleSort(unsorted_array);
     console.log(sorted_array);
 });
 
-// stop_btn.addEventListener("click", stop_function());
 
-// stop_btn.addEventListener("click",stop_function() {
-//     bool=stop_function(bool);
-// });
+
