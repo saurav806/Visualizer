@@ -1,6 +1,6 @@
 # Project Name: Algo Visualizer
 
-# Description:
+# Description :
 Algo Visualizer is an interactive tool designed to visualize various algorithms, focusing primarily on sorting and searching algorithms. Its purpose is to make complex algorithms more accessible and understandable by providing a visual representation of their execution.
 
 With Algo Visualizer, you can witness the step-by-step execution of algorithms, observe how data elements are manipulated, and understand the underlying logic behind each algorithm. It aims to bridge the gap between abstract algorithmic concepts and their practical implementation.
