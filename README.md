@@ -17,3 +17,5 @@ With Algo Visualizer, you can witness the step-by-step execution of algorithms, 
 5. Educational Resource: Algo Visualizer is not only a tool for practitioners but also serves as an educational resource for students and enthusiasts. By visualizing algorithms, it helps learners grasp complex concepts in a more intuitive manner, fostering a deeper understanding of their inner workings.
 
 By using Algo Visualizer, you can gain a better understanding of sorting and searching algorithms, their time complexities, and the trade-offs between different approaches. Whether you are a student studying algorithms or a developer looking to optimize your code, Algo Visualizer is a valuable tool that combines functionality with visual appeal to enhance your learning experience.
+
+Soon will start working again
